@@ -9,14 +9,12 @@ function buildMetadata(sample) {
 
     // Use `.html("") to clear any existing metadata
     PANEL.html("");
-	
+  
     // Hint: Inside the loop, you will need to use d3 to append new
     // tags for each key-value in the metadata.
     for (key in result){
       PANEL.append("h4").text(`${key.toUpperCase()}: ${result[key]}`);
     };
-
-  
   });
 }
 
@@ -100,7 +98,7 @@ function init() {
 
 function optionChanged(sample) {
   // Fetch new data each time a new sample is selected
-  // buildCharts(xxxxx);
+  buildCharts(sample);
   buildMetadata(sample);
 }
 
